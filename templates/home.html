@@ -1,0 +1,74 @@
+<!-- wp:template-part {"slug":"header","theme":"autoparts","tagName":"header","area":"header"} /-->
+
+<main id="main-content" role="main" class="site-main blog-archive">
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"48px","bottom":"64px","left":"40px","right":"40px"}}},"layout":{"type":"constrained","contentSize":"1280px"}} -->
+<div class="wp-block-group">
+
+  <!-- wp:group {"className":"archive-header","style":{"spacing":{"margin":{"bottom":"32px"}}},"layout":{"type":"default"}} -->
+  <div class="wp-block-group archive-header">
+
+    <!-- wp:query-title {"type":"archive","className":"archive-title","style":{"typography":{"fontFamily":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-family\u002d\u002dheading)","fontWeight":"700","fontSize":"40px"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dtext-primary)"},"spacing":{"margin":{"bottom":"8px"}}}} /-->
+
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:search {"label":"Search articles","showLabel":false,"placeholder":"Search articles...","buttonText":"Search","buttonUseIcon":true,"className":"archive-search","style":{"spacing":{"margin":{"bottom":"32px"}}}} /-->
+
+  <!-- wp:query {"queryId":50,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+  <div class="wp-block-query">
+
+    <!-- wp:post-template {"className":"blog-grid","layout":{"type":"grid","columnCount":2}} -->
+
+      <!-- wp:group {"className":"post-card","layout":{"type":"default"},"style":{"border":{"width":"1px","color":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dborder)","radius":"12px"},"color":{"background":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dsurface)"},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+      <div class="wp-block-group post-card">
+
+        <!-- wp:post-featured-image {"isLink":true,"height":"220px","style":{"border":{"radius":{"topLeft":"11px","topRight":"11px","bottomLeft":"0px","bottomRight":"0px"}}}} /-->
+
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"16px","right":"16px"},"blockGap":"8px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+        <div class="wp-block-group">
+
+          <!-- wp:post-terms {"term":"category","className":"post-badge"} /-->
+
+          <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","alignItems":"center"},"style":{"spacing":{"blockGap":"16px"}}} -->
+          <div class="wp-block-group post-meta">
+            <!-- wp:post-date {"style":{"typography":{"fontSize":"12px"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dtext-muted)"}}} /-->
+            <!-- wp:post-time-to-read {"style":{"typography":{"fontSize":"12px"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dtext-muted)"}}} /-->
+          </div>
+          <!-- /wp:group -->
+
+          <!-- wp:post-title {"level":2,"isLink":true,"style":{"typography":{"fontSize":"18px","fontWeight":"700","lineHeight":"1.4"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dtext-primary)"}}} /-->
+
+          <!-- wp:post-excerpt {"excerptLength":25,"style":{"typography":{"fontSize":"14px"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dtext-secondary)"}}} /-->
+
+          <!-- wp:read-more {"content":"Read Analysis →","style":{"typography":{"fontSize":"14px","fontWeight":"500"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002daccent)"}}} /-->
+
+        </div>
+        <!-- /wp:group -->
+
+      </div>
+      <!-- /wp:group -->
+
+    <!-- /wp:post-template -->
+
+    <!-- wp:query-no-results -->
+    <!-- wp:paragraph -->
+    <p>No posts were found matching your selection.</p>
+    <!-- /wp:paragraph -->
+    <!-- /wp:query-no-results -->
+
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"48px"}}}} -->
+      <!-- wp:query-pagination-previous /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+
+  </div>
+  <!-- /wp:query -->
+
+</div>
+<!-- /wp:group -->
+
+</main>
+
+<!-- wp:template-part {"slug":"footer","theme":"autoparts","tagName":"footer","area":"footer"} /-->

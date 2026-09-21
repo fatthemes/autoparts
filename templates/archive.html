@@ -1,0 +1,49 @@
+<!-- wp:template-part {"slug":"header","theme":"autoparts","tagName":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main blog-archive","layout":{"type":"constrained"},"anchor":"main-content"} -->
+<main id="main-content" class="wp-block-group site-main blog-archive"><!-- wp:group {"className":"archive-header"} -->
+<div class="wp-block-group archive-header"><!-- wp:query-title {"type":"archive","className":"archive-title"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search articles...","buttonText":"Search","buttonUseIcon":true,"className":"archive-search"} /-->
+
+<!-- wp:query {"queryId":50,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+<div class="wp-block-query"><!-- wp:post-template {"className":"blog-grid","layout":{"type":"grid","columnCount":2}} -->
+<!-- wp:group {"className":"post-card","layout":{"type":"default"}} -->
+<div class="wp-block-group post-card"><!-- wp:post-featured-image {"isLink":true,"height":"220px"} /-->
+
+<!-- wp:group {"className":"post-card__body","layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group post-card__body"><!-- wp:post-terms {"term":"category","className":"post-badge"} /-->
+
+<!-- wp:group {"className":"post-meta","layout":{"type":"flex","flexWrap":"nowrap","alignItems":"center"}} -->
+<div class="wp-block-group post-meta"><!-- wp:post-date /-->
+
+<!-- wp:post-time-to-read /--></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":2,"isLink":true} /-->
+
+<!-- wp:post-excerpt {"excerptLength":25} /-->
+
+<!-- wp:read-more {"content":"Read More"} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>No posts were found matching your selection.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"className":"blog-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"autoparts","tagName":"footer","area":"footer"} /-->

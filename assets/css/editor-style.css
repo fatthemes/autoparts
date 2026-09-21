@@ -1,0 +1,55 @@
+/* -----------------------------------------------
+   EDITOR STYLES
+   Makes the block editor reflect front-end styling.
+   assets/css/editor-style.css
+   ----------------------------------------------- */
+
+.editor-styles-wrapper {
+	font-family: var(--wp--preset--font-family--body);
+	color: var(--wp--preset--color--text-secondary);
+	background-color: var(--wp--preset--color--background);
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-family: var(--wp--preset--font-family--heading);
+	color: var(--wp--preset--color--text-primary);
+	font-weight: 700;
+}
+
+.editor-styles-wrapper a {
+	color: var(--wp--preset--color--accent);
+}
+
+.editor-styles-wrapper .wp-block-button__link {
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--surface);
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 700;
+	border-radius: 8px;
+}
+
+.editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	color: var(--wp--preset--color--text-primary);
+	border: 1px solid var(--wp--preset--color--border);
+}
+
+.editor-styles-wrapper .wp-block-quote {
+	border-left: 3px solid var(--wp--preset--color--accent);
+	padding-left: 20px;
+	font-style: normal;
+}
+
+.editor-styles-wrapper .wp-block-separator {
+	border-color: var(--wp--preset--color--border);
+}
+
+.editor-styles-wrapper table th {
+	font-family: var(--wp--preset--font-family--heading);
+	color: var(--wp--preset--color--text-primary);
+}
