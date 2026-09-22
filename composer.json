@@ -1,0 +1,7 @@
+{
+    "name": "fatthemes/autoparts",
+    "type": "wordpress-theme",
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0"
+    }
+}
