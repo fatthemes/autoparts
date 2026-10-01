@@ -16,4 +16,3 @@ targeting submission to the official wordpress.org theme directory.
 ## Coding standards
 
 This theme follows the WordPress Coding Standards. Run `vendor/bin/phpcs` to check.
-

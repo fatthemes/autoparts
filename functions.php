@@ -20,6 +20,16 @@ define( 'AUTOPARTS_VERSION', '1.0.0' );
 define( 'AUTOPARTS_DIR', get_template_directory() );
 define( 'AUTOPARTS_URI', get_template_directory_uri() );
 
+/*
+ * -------------------------------------------------------
+ * INCLUDES
+ * Recommended-plugin notice (WooCommerce, Contact Form 7)
+ * via TGM Plugin Activation. Loaded after the constants
+ * above because inc/tgmpa.php uses AUTOPARTS_DIR.
+ * -------------------------------------------------------
+ */
+require_once AUTOPARTS_DIR . '/inc/tgmpa.php';
+
 
 /**
  * Registers all WordPress feature support and menus.

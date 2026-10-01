@@ -59,11 +59,12 @@
   box-sizing: border-box;
 }
 
-/* My account */
+/* My account — same container padding as cart/checkout above, so the
+   page title sits the same distance below the fixed header */
 .my-account-page {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 40px 64px;
+  padding: 48px 40px 64px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1497,7 +1498,12 @@
   font-size: 32px;
   font-weight: 700;
   color: var(--wp--preset--color--text-primary);
-  margin: 0 0 20px;
+  /* Top margin mirrors the 24px block gap the cart/checkout titles get
+     from their layout; it previously was 0, leaving the title pressed
+     against the header. Inline margins stay 0 so the title's left edge
+     lines up with the account nav / login form. */
+  margin-block: var(--wp--preset--spacing--50) 20px;
+  margin-inline: 0;
 }
 
 /* ---- Dashboard layout ---- */
@@ -1515,11 +1521,25 @@
   margin: 0;
 }
 
-.my-account-page .woocommerce-account .woocommerce,
-.my-account-page .woocommerce {
+/* Sidebar + content flex row. Scoped with :has() to the shortcode
+   wrapper that actually holds the account nav — the store-notices
+   block and the logged-out login/register wrapper also carry the
+   .woocommerce class and must not pick up this layout. */
+.my-account-page .woocommerce:has(> .woocommerce-MyAccount-navigation) {
   display: flex;
   gap: 40px;
   align-items: flex-start;
+}
+
+/* WooCommerce core (woocommerce.css) gives this wrapper a float
+   clearfix: `.woocommerce-account .woocommerce::before/::after
+   { content: " "; display: table }`. Inside a flex container those
+   pseudo-elements become invisible flex items, and the gap pushes the
+   nav 40px (24px tablet) away from the title's left edge. Floats are
+   not used here, so the clearfix is switched off. */
+.my-account-page .woocommerce:has(> .woocommerce-MyAccount-navigation)::before,
+.my-account-page .woocommerce:has(> .woocommerce-MyAccount-navigation)::after {
+  content: none;
 }
 
 /* Sidebar navigation */
@@ -1544,8 +1564,12 @@
   border-bottom: none;
 }
 
+/* Flex row so the ::before icon (below) sits beside the label,
+   vertically centred, with a fixed gap */
 .my-account-page .woocommerce-MyAccount-navigation li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 14px 20px;
   margin: 0;
   font-size: 14px;
@@ -1569,6 +1593,108 @@
   background: var(--wp--preset--color--accent);
   color: var(--wp--preset--color--surface);
   font-weight: 600;
+}
+
+/* No underline in any state. WooCommerce core
+   (woocommerce-blocktheme.css) underlines the active item and hovered
+   items via `.woocommerce-account .woocommerce-MyAccount-navigation
+   li.is-active a` / `li a:hover` (specificity 0,3,2). Keying off the
+   .woocommerce-MyAccount-navigation-link class WooCommerce puts on every
+   <li> lifts these to 0,4,2 so they win regardless of load order. */
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link a,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link a:is(:hover, :focus, :focus-visible, :active),
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link.is-active a {
+  text-decoration: none;
+}
+
+/* Keyboard focus ring. The global a:focus-visible outline sits outside
+   the link and would be clipped by the <ul>'s overflow:hidden, so it is
+   drawn inset instead: a 2px accent outline plus a 2px surface ring just
+   inside it. The surface ring keeps the indicator visible on the active
+   item, where the accent outline alone would vanish into the accent
+   background. */
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link a:focus-visible {
+  outline: 2px solid var(--wp--preset--color--accent);
+  outline-offset: -2px;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 4px var(--wp--preset--color--surface);
+}
+
+/* ---- Navigation icons ----
+   Decorative icons via ::before only — no extra markup, so nothing
+   is announced by screen readers. WooCommerce adds a
+   woocommerce-MyAccount-navigation-link--{endpoint} class to each <li>,
+   which is what the per-icon rules below key off.
+
+   Every link gets a 20px transparent slot. Endpoints without a mapped
+   icon (e.g. ones added by plugins) therefore show empty space and
+   their labels stay aligned with the rest — never a solid square. */
+.my-account-page .woocommerce-MyAccount-navigation li a::before {
+  content: "";
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+}
+
+/* Mapped endpoints: the PNG is used as a mask over currentColor, so the
+   icon always matches the link text — text-secondary by default,
+   accent on hover, surface (white) on the active item, error on logout. */
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--dashboard a::before,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--orders a::before,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--downloads a::before,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-address a::before,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-account a::before,
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--dashboard a::before {
+  -webkit-mask-image: url("../images/icons/dashboard.png");
+  mask-image: url("../images/icons/dashboard.png");
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--orders a::before {
+  -webkit-mask-image: url("../images/icons/orders.png");
+  mask-image: url("../images/icons/orders.png");
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--downloads a::before {
+  -webkit-mask-image: url("../images/icons/download.png");
+  mask-image: url("../images/icons/download.png");
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-address a::before {
+  -webkit-mask-image: url("../images/icons/address.png");
+  mask-image: url("../images/icons/address.png");
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-account a::before {
+  -webkit-mask-image: url("../images/icons/account.png");
+  mask-image: url("../images/icons/account.png");
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+  -webkit-mask-image: url("../images/icons/logout.png");
+  mask-image: url("../images/icons/logout.png");
+}
+
+/* Logout is a destructive action, so text and icon use the error colour.
+   On hover it swaps to the error-background tint but stays red —
+   overriding the generic accent hover above. */
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout a {
+  color: var(--wp--preset--color--error);
+}
+
+.my-account-page .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout a:hover {
+  background: var(--wp--preset--color--error-background);
+  color: var(--wp--preset--color--error);
 }
 
 /* Content area */
@@ -1640,6 +1766,15 @@
   gap: 32px;
   align-items: flex-start;
   margin-top: 0;
+}
+
+/* Same clearfix problem as the dashboard wrapper: WooCommerce's
+   woocommerce-layout.css adds `.col2-set::before/::after
+   { content: " "; display: table }`, which become empty flex items and
+   push the login column 32px off the title's left edge. */
+.my-account-page .u-columns.col2-set::before,
+.my-account-page .u-columns.col2-set::after {
+  content: none;
 }
 
 .my-account-page .u-column1,
@@ -1806,21 +1941,22 @@
     flex: 0 0 200px;
   }
 
-  .my-account-page .woocommerce-account .woocommerce,
-  .my-account-page .woocommerce {
+  .my-account-page .woocommerce:has(> .woocommerce-MyAccount-navigation) {
     gap: 24px;
   }
 }
 
 /* ---- Mobile ---- */
 @media (max-width: 780px) {
+  /* Matches the cart/checkout mobile container padding */
   .my-account-page {
-    padding: 20px 16px 32px;
+    padding: 24px 16px 32px;
   }
 
+  /* Smaller preset step above the title on mobile */
   .my-account-page .wp-block-post-title {
     font-size: 24px;
-    margin: 0 0 16px;
+    margin-block: var(--wp--preset--spacing--40) 16px;
   }
 
   .my-account-page form.login,
@@ -1832,8 +1968,7 @@
     margin-bottom: 16px;
   }
 
-  .my-account-page .woocommerce-account .woocommerce,
-  .my-account-page .woocommerce {
+  .my-account-page .woocommerce:has(> .woocommerce-MyAccount-navigation) {
     flex-direction: column;
     gap: 24px;
   }

@@ -28,9 +28,19 @@ The theme uses WooCommerce blocks throughout rather than classic templates, and 
 
 WooCommerce is required for the shop, cart, checkout, product and account templates to function.
 
-A form plugin is recommended if you wish to add a newsletter signup form to the footer.
+Contact Form 7 is recommended if you wish to add a newsletter signup form to the footer or a contact form to your pages. The theme includes styles for Contact Form 7 forms.
 
 == Frequently Asked Questions ==
+
+= How do I add the newsletter form to the footer? =
+
+1. Install and activate Contact Form 7. The theme recommends it under Appearance > Install Plugins.
+2. Go to Contact > Add New and replace the form template with this code, all on one line:
+`<label for="newsletter-email" class="screen-reader-text">Email address</label> [email* your-email id:newsletter-email autocomplete:email placeholder "example@gmail.com"] [submit "Submit"]`
+3. Save the form and copy its shortcode.
+4. Go to Appearance > Editor > Patterns > Template Parts > Footer. In the Newsletter column, add a Shortcode block after the "Stay updated on new arrivals." paragraph, paste the shortcode and save.
+
+The theme styles this form as a single email field and button bar.
 
 = Does this theme require WooCommerce? =
 
@@ -60,6 +70,12 @@ Copyright (c) 2016-2020 The Inter Project Authors
 License: SIL Open Font License, 1.1
 License URI: https://scripts.sil.org/OFL
 Source: https://fonts.google.com/specimen/Inter
+
+TGM Plugin Activation, by Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+Copyright (c) 2011 Thomas Griffin
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Source: https://github.com/TGMPA/TGM-Plugin-Activation
 
 Space Grotesk font
 Copyright (c) 2020 Florian Karsten
@@ -97,3 +113,9 @@ and are licensed under the GNU General Public License v2 or later:
 assets/images/404-image.png
 assets/images/cta-pattern.png
 assets/images/icons/search.svg
+assets/images/icons/dashboard.png
+assets/images/icons/orders.png
+assets/images/icons/download.png
+assets/images/icons/address.png
+assets/images/icons/account.png
+assets/images/icons/logout.png
