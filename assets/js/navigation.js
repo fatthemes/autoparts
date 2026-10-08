@@ -1,11 +1,11 @@
 /**
- * Autoparts — Header & Navigation Interactions
+ * PartsStop — Header & Navigation Interactions
  *
  * Handles the mobile hamburger menu, mobile search toggle,
  * header scroll shadow, WooCommerce cart count updates,
  * keyboard focus trapping, and viewport resize cleanup.
  *
- * @package autoparts
+ * @package PartsStop
  */
 
 document.addEventListener( 'DOMContentLoaded', function () {
@@ -97,14 +97,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		var mobileSearchForm = document.createElement( 'form' );
 		mobileSearchForm.setAttribute( 'role', 'search' );
 		mobileSearchForm.setAttribute( 'method', 'get' );
-		mobileSearchForm.setAttribute( 'action', autopartsData.homeUrl );
+		mobileSearchForm.setAttribute( 'action', partsstopData.homeUrl );
 		mobileSearchForm.className = 'mobile-search-form';
 
 		var mobileSearchInput = document.createElement( 'input' );
 		mobileSearchInput.setAttribute( 'type', 'search' );
 		mobileSearchInput.setAttribute( 'name', 's' );
-		mobileSearchInput.setAttribute( 'placeholder', autopartsData.searchPlaceholder );
-		mobileSearchInput.setAttribute( 'aria-label', autopartsData.searchPlaceholder );
+		mobileSearchInput.setAttribute( 'placeholder', partsstopData.searchPlaceholder );
+		mobileSearchInput.setAttribute( 'aria-label', partsstopData.searchPlaceholder );
 		mobileSearchInput.className = 'mobile-search-input';
 
 		/* Hidden input to filter WooCommerce products */
@@ -115,9 +115,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		var mobileSearchBtn = document.createElement( 'button' );
 		mobileSearchBtn.setAttribute( 'type', 'submit' );
-		mobileSearchBtn.setAttribute( 'aria-label', autopartsData.searchAriaLabel );
+		mobileSearchBtn.setAttribute( 'aria-label', partsstopData.searchAriaLabel );
 		mobileSearchBtn.className = 'mobile-search-btn';
-		mobileSearchBtn.textContent = autopartsData.searchButtonText;
+		mobileSearchBtn.textContent = partsstopData.searchButtonText;
 
 		mobileSearchForm.appendChild( mobileSearchInput );
 		mobileSearchForm.appendChild( postTypeInput );
@@ -271,8 +271,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			return;
 		}
 
-		if ( typeof autopartsData !== 'undefined' && typeof autopartsData.cartCount !== 'undefined' ) {
-			cartCountEl.textContent = autopartsData.cartCount;
+		if ( typeof partsstopData !== 'undefined' && typeof partsstopData.cartCount !== 'undefined' ) {
+			cartCountEl.textContent = partsstopData.cartCount;
 		}
 
 		var cartLink = cartCountEl.closest( '.cart-link' );
