@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Renamed the theme from Autoparts to PartsStop; theme name, slug and text domain are now `partsstop`.
+- PHP function prefix changed to `partsstop_`, constants to `PARTSSTOP_*`, script/style handles to `partsstop-*`, and the localized JS object to `partsstopData`.
+- Block pattern namespace and category changed to `partsstop/`, and the copyright block binding source to `partsstop/copyright`.
+- My Account login/register toggle classes renamed from `lime-account-toggle` to `partsstop-account-toggle`.
+- TGM Plugin Activation library regenerated for the `partsstop` slug, with updated config id and menu slug.
+
 ## [1.0.0] - 2026-09-21
 
 ### Added

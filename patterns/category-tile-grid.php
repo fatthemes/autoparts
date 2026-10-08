@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Category Tile Grid
- * Slug: autoparts/category-tile-grid
- * Categories: autoparts
+ * Slug: partsstop/category-tile-grid
+ * Categories: partsstop
  * Description: A section heading with a link, followed by a grid of product categories.
  *
- * @package Lime_Autoparts
+ * @package PartsStop
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,17 +16,17 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
-$autoparts_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+$partsstop_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 ?>
 
 <!-- wp:group {"className":"la-categories","backgroundColor":"surface","align":"full","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull la-categories has-surface-background-color has-background"><!-- wp:group {"className":"la-categories__header","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group la-categories__header"><!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html_x( 'Browse by Category', 'Sample heading for category grid pattern', 'autoparts' ); ?></h2>
+<h2 class="wp-block-heading"><?php echo esc_html_x( 'Browse by Category', 'Sample heading for category grid pattern', 'partsstop' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"la-categories__link","textColor":"accent","fontSize":"small"} -->
-<p class="la-categories__link has-accent-color has-text-color has-small-font-size"><a href="<?php echo esc_url( $autoparts_shop_url ); ?>"><?php echo esc_html_x( 'Explore Full Inventory', 'Sample link text for category grid pattern', 'autoparts' ); ?></a></p>
+<p class="la-categories__link has-accent-color has-text-color has-small-font-size"><a href="<?php echo esc_url( $partsstop_shop_url ); ?>"><?php echo esc_html_x( 'Explore Full Inventory', 'Sample link text for category grid pattern', 'partsstop' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

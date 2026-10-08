@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Featured Products
- * Slug: autoparts/featured-products
- * Categories: autoparts
+ * Slug: partsstop/featured-products
+ * Categories: partsstop
  * Description: A section heading with a link, followed by a grid of featured products.
  *
- * @package Lime_Autoparts
+ * @package PartsStop
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,17 +16,17 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
-$autoparts_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+$partsstop_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 ?>
 
 <!-- wp:group {"className":"la-featured","layout":{"type":"constrained"}} -->
 <div class="wp-block-group la-featured"><!-- wp:group {"className":"la-featured__header","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group la-featured__header"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php echo esc_html_x( 'Fast Selling Components', 'Sample heading for featured products pattern', 'autoparts' ); ?></h3>
+<h3 class="wp-block-heading"><?php echo esc_html_x( 'Fast Selling Components', 'Sample heading for featured products pattern', 'partsstop' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"la-featured__link","textColor":"accent","fontSize":"small"} -->
-<p class="la-featured__link has-accent-color has-text-color has-small-font-size"><a href="<?php echo esc_url( $autoparts_shop_url ); ?>"><?php echo esc_html_x( 'View All Products', 'Sample link text for featured products pattern', 'autoparts' ); ?></a></p>
+<p class="la-featured__link has-accent-color has-text-color has-small-font-size"><a href="<?php echo esc_url( $partsstop_shop_url ); ?>"><?php echo esc_html_x( 'View All Products', 'Sample link text for featured products pattern', 'partsstop' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

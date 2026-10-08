@@ -1,4 +1,4 @@
-=== Autoparts ===
+=== PartsStop ===
 
 Contributors: limestreet
 Requires at least: 7.1
@@ -13,7 +13,7 @@ A modern, accessible, block-based WordPress theme with native WooCommerce suppor
 
 == Description ==
 
-Autoparts is a full site editing block theme designed for automotive parts retailers. It includes native WooCommerce support with styled templates for the shop, single product, cart, checkout and account pages, along with block patterns for building a store homepage.
+PartsStop is a full site editing block theme designed for automotive parts retailers. It includes native WooCommerce support with styled templates for the shop, single product, cart, checkout and account pages, along with block patterns for building a store homepage.
 
 The theme uses WooCommerce blocks throughout rather than classic templates, and all styling is applied through CSS files and theme.json presets.
 
@@ -60,8 +60,8 @@ Go to Appearance > Editor > Styles > Colors to edit the theme palette.
 
 == Copyright ==
 
-Autoparts WordPress Theme, (C) 2026 Lime Street
-Autoparts is distributed under the terms of the GNU GPL v2 or later.
+PartsStop WordPress Theme, (C) 2026 Lime Street
+PartsStop is distributed under the terms of the GNU GPL v2 or later.
 
 This theme bundles the following third-party resources:
 
