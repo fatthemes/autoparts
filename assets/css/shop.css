@@ -1888,25 +1888,25 @@
 }
 
 /* "New here? / Already have an account?" links  */
-.my-account-page .lime-account-toggle {
+.my-account-page .partsstop-account-toggle {
   margin: 16px 0 0;
   font-size: 14px;
   color: var(--wp--preset--color--text-secondary);
 }
 
-.my-account-page .lime-account-toggle__link {
+.my-account-page .partsstop-account-toggle__link {
   color: var(--wp--preset--color--accent);
   font-weight: 600;
   text-decoration: none;
   margin-left: 4px;
 }
 
-.my-account-page .lime-account-toggle__link:hover {
+.my-account-page .partsstop-account-toggle__link:hover {
   color: var(--wp--preset--color--accent-hover);
   text-decoration: underline;
 }
 
-.my-account-page .lime-account-toggle__link:focus-visible {
+.my-account-page .partsstop-account-toggle__link:focus-visible {
   outline: 2px solid var(--wp--preset--color--accent);
   outline-offset: 2px;
 }

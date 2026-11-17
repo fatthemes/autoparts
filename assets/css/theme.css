@@ -1,5 +1,5 @@
 /* =============================================
-   LIME AUTOPARTS — THEME STYLESHEET
+   PARTSSTOP — THEME STYLESHEET
    All visual styles for the theme.
    Companion to theme.json which handles
    global block editor styles.
@@ -795,11 +795,9 @@ textarea:focus-visible {
   opacity: 1;
 }
 
-
 .wpcf7 .wpcf7-form .wpcf7-form-control.wpcf7-not-valid {
   border-color: var(--wp--preset--color--error);
 }
-
 
 .wpcf7 .wpcf7-form .wpcf7-form-control:is(.wpcf7-text, .wpcf7-textarea, .wpcf7-select, .wpcf7-number, .wpcf7-date):focus {
   border-color: var(--wp--preset--color--accent);
@@ -828,7 +826,6 @@ textarea:focus-visible {
   background-color: var(--wp--preset--color--accent-hover);
 }
 
-
 .wpcf7 .wpcf7-form .wpcf7-submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -852,7 +849,7 @@ textarea:focus-visible {
   color: var(--wp--preset--color--text-secondary);
 }
 
-/* Sent. The success token alone  */
+/* Sent. The success token alone */
 .wpcf7 .wpcf7-form.sent .wpcf7-response-output {
   color: color-mix(in srgb, var(--wp--preset--color--success) 55%, var(--wp--preset--color--text-primary));
 }
@@ -860,7 +857,6 @@ textarea:focus-visible {
 .wpcf7 .wpcf7-form:is(.invalid, .unaccepted, .failed, .aborted, .spam) .wpcf7-response-output {
   color: var(--wp--preset--color--error);
 }
-
 
 .wpcf7 .wpcf7-form .wpcf7-spinner {
   display: none;
