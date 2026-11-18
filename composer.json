@@ -1,5 +1,5 @@
 {
-    "name": "fatthemes/autoparts",
+    "name": "fatthemes/partsstop",
     "type": "wordpress-theme",
     "require-dev": {
         "wp-coding-standards/wpcs": "^3.0"
